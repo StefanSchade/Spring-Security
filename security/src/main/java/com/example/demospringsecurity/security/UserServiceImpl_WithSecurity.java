@@ -1,10 +1,10 @@
-package de.stefanschade.SpringSecurityPrototype.ws.service.impl;
+package com.example.demospringsecurity.security;
 
-import de.stefanschade.SpringSecurityPrototype.domain.UserEntity;
-import de.stefanschade.SpringSecurityPrototype.repositories.UserRepository;
-import de.stefanschade.SpringSecurityPrototype.ws.dto.UserDto;
-import de.stefanschade.SpringSecurityPrototype.ws.service.UserService;
-import de.stefanschade.SpringSecurityPrototype.ws.shared.Utils;
+import com.example.demospringsecurity.core.domain.UserEntity;
+import com.example.demospringsecurity.core.dto.UserDto;
+import com.example.demospringsecurity.core.repositories.UserRepository;
+import com.example.demospringsecurity.core.shared.Utils;
+import com.example.demospringsecurity.web.service.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
