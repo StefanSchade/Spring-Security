@@ -9,7 +9,5 @@ import org.springframework.stereotype.Service;
 public interface UserService
 //        extends UserDetailsService
 {
-
     UserDto createUser(UserDto user);
-
 }
