@@ -9,6 +9,8 @@ public interface UserRepository extends CrudRepository<UserEntity,Long> {
 
     UserEntity findByEmail(String email);
 
+    UserEntity findByUserId(String userId);
+
 //    List<UserEntity> findByLastName(@Param("lastName") String lastName);
 //
 //    Optional<UserEntity> findById(@Param("id") Long id);

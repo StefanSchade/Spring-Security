@@ -19,12 +19,6 @@ public class SpringApplicationContext implements ApplicationContextAware {
 
     public static Object getBean(String beanName) {
 
-        if(CONTEXT == null ) {
-            log.info("Context was not autowired");} else {
-            log.info("Context was autowired");
-            log.info("List of Beans" + String.valueOf(Arrays.asList(CONTEXT.getBeanDefinitionNames())));
-        }
-
         return CONTEXT.getBean(beanName);
     }
 }

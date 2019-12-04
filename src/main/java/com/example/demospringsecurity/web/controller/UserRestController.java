@@ -21,9 +21,12 @@ public class UserRestController {
     @Autowired
     private UserRepository userRepository;
 
-    @GetMapping
-    public String getUser() {
-        return "getUser called";
+    @GetMapping(path = "/{userId}/")
+    public UserRest getUser(@PathVariable String userId) {
+        UserRest returnValue = new UserRest();
+        UserDto userDto = userService.getUserByUserId(userId);
+        BeanUtils.copyProperties(userDto,returnValue);
+        return returnValue;
     }
 
     @PostMapping
