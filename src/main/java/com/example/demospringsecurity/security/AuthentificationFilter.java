@@ -64,4 +64,8 @@ public class AuthentificationFilter extends UsernamePasswordAuthenticationFilter
         log.info("breakpoint 2: successful Authentication " + token);
         response.addHeader(SecurityConstants.HEADER_STRING, SecurityConstants.TOKEN_PREFIX + token);
     }
+
+
+
+
 }

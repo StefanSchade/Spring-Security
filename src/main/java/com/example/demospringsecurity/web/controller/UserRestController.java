@@ -32,9 +32,9 @@ public class UserRestController {
         UserDto userDto = new UserDto();
         BeanUtils.copyProperties(userDetails, userDto);
         UserDto createdUser =  userService.createUser(userDto);
-        UserRest returnvalue = new UserRest();
-        BeanUtils.copyProperties(createdUser, returnvalue);
-        return returnvalue;
+        UserRest returnValue = new UserRest();
+        BeanUtils.copyProperties(createdUser, returnValue);
+        return returnValue;
     }
 
     @PutMapping
