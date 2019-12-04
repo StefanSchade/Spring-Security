@@ -3,11 +3,10 @@ package com.example.demospringsecurity;
 import com.example.demospringsecurity.security.AppProperties;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
-import javax.swing.*;
+
 
 @SpringBootApplication
 //@SpringBootApplication(exclude={SecurityAutoConfiguration.class})
@@ -32,5 +31,6 @@ public class DemoSpringSecurityApplication {
 	public AppProperties getAppProperties() {
 		return new AppProperties();
 	}
+
 
 }

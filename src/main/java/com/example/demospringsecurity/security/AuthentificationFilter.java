@@ -24,7 +24,9 @@ import java.util.ArrayList;
 import java.util.Date;
 
 @Slf4j
-public class AuthentificationFilter extends UsernamePasswordAuthenticationFilter { // not a bean, can not autowire other beans
+// indirectly extends org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter
+// not a bean, can not autowire other beans
+public class AuthentificationFilter extends UsernamePasswordAuthenticationFilter {
     private final AuthenticationManager authenticationManager;
 
     public AuthentificationFilter(AuthenticationManager authenticationManager) {
@@ -32,7 +34,9 @@ public class AuthentificationFilter extends UsernamePasswordAuthenticationFilter
     }
 
     @Override
-    public Authentication attemptAuthentication(HttpServletRequest request, HttpServletResponse response) throws AuthenticationException {
+    public Authentication attemptAuthentication(HttpServletRequest request,
+                                                HttpServletResponse response)
+            throws AuthenticationException {
         try {
             log.info("breakpoint 1: attempt Authentication");
             UserLoginRequestModel credentials = new ObjectMapper()
@@ -70,10 +74,7 @@ public class AuthentificationFilter extends UsernamePasswordAuthenticationFilter
         UserDto userDto = userService.getUser(userName);
 
         response.addHeader(SecurityConstants.HEADER_STRING, SecurityConstants.TOKEN_PREFIX + token);
-        response.addHeader("UserID", userDto.getUserId() );
+        response.addHeader("UserID", userDto.getUserId());
     }
-
-
-
 
 }
