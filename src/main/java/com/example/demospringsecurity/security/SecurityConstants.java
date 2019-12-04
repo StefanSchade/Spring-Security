@@ -1,12 +1,23 @@
 package com.example.demospringsecurity.security;
 
+import com.example.demospringsecurity.SpringApplicationContext;
+
+
 public class SecurityConstants {
 
     public static final long EXPIRATION_TIME = 864000000; // 10 DAYS
     public static final String TOKEN_PREFIX = "Bearer ";
-    public static final String HEADER_STRING = "Authorisation";
+    public static final String HEADER_STRING = "Authorization";
     public static final String SING_UP_URL = "/users";
     public static final String SIGN_IN_URL = "/login";
-    public static final String TOKEN_SECRET = "jf9i4jgu83nfl0x";
+
+
+    // this class is not a component, so we use SpringApplicationContext to access properties bean
+    public static String getTokenSecret() {
+        AppProperties appProperties = (AppProperties) SpringApplicationContext.getBean("AppProperties");
+        return appProperties.getTokenSecret();
+    }
+
+
 
 }
