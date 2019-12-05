@@ -28,7 +28,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         log.info("SecConfig");
-        http.csrf().disable().authorizeRequests().antMatchers(HttpMethod.POST, SecurityConstants.SING_UP_URL).permitAll()
+        http.csrf().disable().cors().and().authorizeRequests().antMatchers(HttpMethod.POST, SecurityConstants.SING_UP_URL).permitAll()
                 .antMatchers("/h2-console/**").permitAll()
                 //.antMatchers(HttpMethod.POST,SIGN_IN_URL).permitAll()
                 .anyRequest().authenticated().and()
